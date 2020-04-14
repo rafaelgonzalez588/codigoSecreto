@@ -1,10 +1,9 @@
-
 const express = require('express');
 const app = express();
 
-app.get('/', (req, res) => {
+app.get('/makers/:nombre', (req, res) => {
     var data = ""
-    data = req.query.nombre ? req.query.nombre : 'desconocido'
+    data = req.params.nombre.toUpperCase
    res.send( '<h1>Hola ' + data +'!</h1>');
 });
 
